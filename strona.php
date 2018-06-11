@@ -27,14 +27,15 @@ if(!isset($_SESSION['logIn']) || $_SESSION['logIn'] == false){
       <div><img src="img/plus_white.svg"></div> 
       <span>Dodaj ogłoszenie <br>za darmo</span>
     </div>
-
+<div class="logIn">
 <?php
   if($_SESSION['logIn'] == true){
-      echo '<div class="logIn">Witaj Tomku</div>';
+      echo 'Witaj Tomku';
   }else{
-    echo '<div class="logIn">Logowanie / Rejestracja</div>';
+    echo 'Logowanie / Rejestracja';
   }
 ?>
+</div>
     
     <div style="clear: both;"></div>
   </header>

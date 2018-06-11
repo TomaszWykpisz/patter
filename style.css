@@ -11,6 +11,12 @@ body{
  	overflow-x: hidden;
 }
 
+.logIn, .addAdvert, .addAdvert div:first-child,
+main, nav
+{
+	display: flex;
+}
+
 header{
 	width: 100vw;
 	height: 10vh;
@@ -26,7 +32,6 @@ header{
 .addAdvert{
 	float: right;
 	height: inherit;
-	display: flex;
 	align-items: center;
 	font-size: 1.1em;
 	font-weight: 700;
@@ -37,7 +42,6 @@ header{
 	background: #367AA3;
 	padding: 1vw ;
 	height: inherit;
-	display: flex;
 	margin-right: .5vw;
 }
 .addAdvert img{
@@ -47,7 +51,6 @@ header{
 
 .logIn{     
 	float: right;
-	display: flex;
 	align-items: center;
 	height: inherit;
 	margin-right: 20px;
@@ -55,15 +58,19 @@ header{
 }
 
 main{
-	display: flex;
 }
 
 nav{
-	display: flex;
 	flex-direction: column;
 	width: 15vw;
 	border-right: 2px solid rgba(28,106,152,1);
 }
+
+/*nav h2{
+	text-align: right;
+	padding: 10px;
+	margin: 0;
+}*/
 
 .leftNavItem{
 	padding: 10px;
