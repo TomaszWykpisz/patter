@@ -27,8 +27,35 @@ if(!isset($_SESSION['logIn']) || $_SESSION['logIn'] == false){
       <div><img src="img/plus_white.svg"></div> 
       <span>Dodaj ogłoszenie <br>za darmo</span>
     </div>
+
+<?php
+  if($_SESSION['logIn'] == true){
+      echo '<div class="logIn">Witaj Tomku</div>';
+  }else{
+    echo '<div class="logIn">Logowanie / Rejestracja</div>';
+  }
+?>
+    
     <div style="clear: both;"></div>
   </header>
+  <main>
+    <nav>
+      <h2>Title of menu</h2>
+      <div class="leftNavItem">MenuItem</div>
+      <div class="leftNavItem">MenuItem</div>
+      <div class="leftNavItem">MenuItem</div>
+      <div class="leftNavItem">MenuItem</div>
+      <div class="leftNavItem">MenuItem</div>
+      <div class="leftNavItem">MenuItem</div>
+      <div class="leftNavItem">MenuItem</div>
+      <div class="leftNavItem">MenuItem</div>
+      <div class="leftNavItem">MenuItem</div>
+      <div class="leftNavItem">MenuItem</div>
+    </nav>
+    <section>
+      
+    </section>
+  </main>
   <a href="logout.php">Wyloguj</a>
 
 </body>

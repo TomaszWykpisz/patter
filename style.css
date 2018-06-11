@@ -8,7 +8,7 @@ body{
     margin: 0;
  	font-family: "Calibri";
  	font-size: 15px;
- 	overflow-x: hidden; 
+ 	overflow-x: hidden;
 }
 
 header{
@@ -45,3 +45,41 @@ header{
 	height: auto;
 }
 
+.logIn{     
+	float: right;
+	display: flex;
+	align-items: center;
+	height: inherit;
+	margin-right: 20px;
+	font-weight: 700;
+}
+
+main{
+	display: flex;
+}
+
+nav{
+	display: flex;
+	flex-direction: column;
+	width: 15vw;
+	border-right: 2px solid rgba(28,106,152,1);
+}
+
+.leftNavItem{
+	padding: 10px;
+    text-align: center;
+    -webkit-box-shadow: inset 8px -7px 4px -3px rgba(239,146,33,1);
+	-moz-box-shadow: inset 8px -7px 4px -3px rgba(239,146,33,1);
+	box-shadow: inset 8px -7px 4px -3px rgba(239,146,33,1);
+	margin-bottom: 3px;
+}
+
+.leftNavItem:hover{
+
+	-webkit-box-shadow: inset 8px -7px 4px -3px rgba(28,106,152,1);
+	-moz-box-shadow: inset 8px -7px 4px -3px rgba(28,106,152,1);
+	box-shadow: inset 8px -7px 4px -3px rgba(28,106,152,1);
+	padding-left: 20px;
+	cursor: pointer;
+	letter-spacing: 1px;
+}
