@@ -36,6 +36,11 @@ if(!isset($_SESSION['logIn']) || $_SESSION['logIn'] == false){
   }
 ?>
 </div>
+<section class="topNav">
+  <div class="topNavItem">Some Item</div>
+  <div class="topNavItem">Some Item2</div>
+  <div class="topNavItem">Some Item3</div>
+</section>
     
     <div style="clear: both;"></div>
   </header>
@@ -58,6 +63,7 @@ if(!isset($_SESSION['logIn']) || $_SESSION['logIn'] == false){
     </section>
   </main>
   <a href="logout.php">Wyloguj</a>
+  <svg height="64" version="1.1" width="64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 
 </body>
 </html>

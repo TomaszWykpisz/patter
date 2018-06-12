@@ -12,7 +12,7 @@ body{
 }
 
 .logIn, .addAdvert, .addAdvert div:first-child,
-main, nav
+main, nav, .topNav
 {
 	display: flex;
 }
@@ -49,7 +49,7 @@ header{
 	height: auto;
 }
 
-.logIn{     
+.logIn, .topNav{     
 	float: right;
 	align-items: center;
 	height: inherit;
@@ -89,4 +89,12 @@ nav{
 	padding-left: 20px;
 	cursor: pointer;
 	letter-spacing: 1px;
+}
+
+.topNav{
+	margin-right: 	px;
+}
+
+.topNavItem{
+	margin-right: 10px;
 }
