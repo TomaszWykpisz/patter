@@ -1,76 +1,42 @@
 *{
 	box-sizing: border-box;
 	transition: all .3s;
-	font-size: 1em;
+ 	font-family: 'Cabin', sans-serif;
+	font-size: 15px;
 }
 
 body{
     margin: 0;
- 	font-family: "Calibri";
- 	font-size: 15px;
  	overflow-x: hidden;
 }
 
 .logIn, .addAdvert, .addAdvert div:first-child,
-main, nav, .topNav
-{
-	display: flex;
-}
+main, nav, .topNav, .search, .search div, footer
+{display: flex;}
 
-header{
-	width: 100vw;
-	height: 10vh;
-	padding: 0 2vw 0 2vw;
-	background: #EF9221;
-}
+footer
+{justify-content: center;}
+.search div
+{align-items: center;}
 
-#logo{
-	float: left;
-	margin-top: 2.5vh;
-}
+header, footer
+{width: 100%}
 
-.addAdvert{
-	float: right;
-	height: inherit;
-	align-items: center;
-	font-size: 1.1em;
-	font-weight: 700;
-	text-align: right;
-}
+nav, main, aside, .logo
+{float: left;}
 
-.addAdvert div:first-child{
-	background: #367AA3;
-	padding: 1vw ;
-	height: inherit;
-	margin-right: .5vw;
-}
-.addAdvert img{
-	width: 1.5vw;
-	height: auto;
-}
+header, .addAdvert, footer
+{background: #EF9221;}
 
-.logIn, .topNav{     
-	float: right;
-	align-items: center;
-	height: inherit;
-	margin-right: 20px;
-	font-weight: 700;
-}
 
-main{
-}
+
 
 nav{
 	flex-direction: column;
-	width: 15vw;
+	width: 15%;
 	border-right: 2px solid rgba(28,106,152,1);
 }
 
-/*nav h2{
-	text-align: right;
-	padding: 10px;
-	margin: 0;
-}*/
 
 .leftNavItem{
 	padding: 10px;
@@ -91,10 +57,107 @@ nav{
 	letter-spacing: 1px;
 }
 
-.topNav{
-	margin-right: 	px;
+
+
+
+
+
+
+
+
+
+
+
+main{
+	width: 70%;
+	flex-direction: column;
+	background: url(./img/brick.jpg);
+	color: #FFF;
 }
 
+header{
+	height: 65px;
+	padding: 0 2vw 0 2vw;
+}
+.logo{
+	margin-top: 2.5vh;
+}
+
+
+.logIn, .topNav{     
+	float: right;
+	align-items: center;
+	height: inherit;
+	margin-right: 20px;
+}
+
+.topNav{
+	margin-right: 10px;
+}
 .topNavItem{
 	margin-right: 10px;
 }
+
+.search{
+	margin: 10px;
+	padding: 15px;
+	border-radius: 20px;
+	background: rgba(108, 108, 108, .5);
+}
+
+.search div{
+	flex-direction: column;
+	width: 25%;
+}
+.search p{
+	margin: 5px 0;
+}
+.search input, .search select{
+	border-radius: 3px;
+	outline: none;
+	border: none;
+	width: 90%;
+	height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+aside{
+	width: 15%;
+}
+
+
+.addAdvert{
+	height: 65px;
+	align-items: center;
+	font-size: 1.1em;
+	font-weight: 700;
+	text-align: right;
+}
+
+.addAdvert div:first-child{
+	background: #367AA3;
+	padding: 1vw ;
+	height: inherit;
+	margin-right: .5vw;
+}
+.addAdvert img{
+	width: 1.5vw;
+	height: auto;
+}
+
+
+footer{
+	padding: 15px;
+}
+
+
+
