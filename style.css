@@ -10,13 +10,16 @@ body{
  	overflow-x: hidden;
 }
 
-.logIn, .addAdvert, .addAdvert div:first-child,
+.userPanel, .logIn form, .addAdvert, .addAdvert div:first-child,
 main, nav, .topNav, .search, .search div, footer
 {display: flex;}
 
-footer
+.userPanel, .logIn form, .search div, nav, main, aside
+{flex-direction: column;}
+
+.userPanel, .addAdvert div:first-child, footer
 {justify-content: center;}
-.search div
+.search div, .addAdvert div:first-child
 {align-items: center;}
 
 header, footer
@@ -32,7 +35,6 @@ header, .addAdvert, footer
 
 
 nav{
-	flex-direction: column;
 	width: 15%;
 	border-right: 2px solid rgba(28,106,152,1);
 }
@@ -70,7 +72,6 @@ nav{
 
 main{
 	width: 70%;
-	flex-direction: column;
 	background: url(./img/brick.jpg);
 	color: #FFF;
 }
@@ -84,33 +85,48 @@ header{
 }
 
 
-.logIn, .topNav{     
+.userPanel, .topNav{     
 	float: right;
 	align-items: center;
 	height: inherit;
 	margin-right: 20px;
 }
 
-.topNav{
-	margin-right: 10px;
+.userPanel img{
+	width: 1em;
+	margin: 5px;
 }
-.topNavItem{
+
+.logIn{
+	padding: 10px;
+	position: absolute; top: 65px;
+	background: #FFA639 
+}
+.logIn p{
+	margin: 5px 0;
+}
+
+.loginError{
+	color: #F00;
+}
+
+.topNav, .topNavItem{
 	margin-right: 10px;
 }
 
 .search{
 	margin: 10px;
-	padding: 15px;
-	border-radius: 20px;
-	background: rgba(108, 108, 108, .5);
+	padding: 10px;
+	border-radius: 15px;
+	background: rgba(0, 0, 0, .5);
 }
 
 .search div{
-	flex-direction: column;
 	width: 25%;
 }
 .search p{
-	margin: 5px 0;
+	margin: 0 0 5px 0;
+	font-size: .95em;
 }
 .search input, .search select{
 	border-radius: 3px;
@@ -142,16 +158,27 @@ aside{
 	font-weight: 700;
 	text-align: right;
 }
+.addAdvert:hover, .logIn:hover{
+	background: #FFA639;
+	cursor: pointer;
+	font-size: 1.12em;
+}
+
+.userPanel:hover{
+	font-size: 1em;
+}
 
 .addAdvert div:first-child{
 	background: #367AA3;
-	padding: 1vw ;
+	width: 50px;
 	height: inherit;
-	margin-right: .5vw;
+	margin-right: 15px;
 }
 .addAdvert img{
-	width: 1.5vw;
-	height: auto;
+	height: 30px;
+}
+.addAdvert:hover img{
+	height: 35px;
 }
 
 
