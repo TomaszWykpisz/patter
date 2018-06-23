@@ -23,7 +23,8 @@ session_start();
 
 	<link href="style.css" rel="stylesheet" type="text/css">
 
-	<script src="lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="lib/jquery/jquery-3.3.1.min.js"></script>
+	<script src="./js/outlook.js"></script>
 
 </head>
 <body>
@@ -46,9 +47,9 @@ session_start();
 			<div class="userPanel">
 				<?php
                 	if(isset($_SESSION['logIn']) && $_SESSION['logIn'] == true){
-                    require_once('./login/logged_on.php');
+                    include('./login/logged_on.php');
                 }else{
-                    require_once('./login/not_logged_in.php');
+                    include('./login/not_logged_in.php');
                 }
 				?> 
                 </div>

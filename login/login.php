@@ -1,62 +1,68 @@
 <?php
-session_start();
+	session_start();
 
-require_once('../db_config.php');
-
-$_SESSION['loginError'] = '';
-
-class ServerException extends Exception{
-	public function showErrorMessage()
-	{
-		$message = '<span style="color:red">Error: (' . mysqli_connect_errno() . ') '. mysqli_connect_error().'</span>';
-		return $message;
-	}
+	if(isset($_SESSION['logIn']) && $_SESSION['logIn'] == true) {
+	header("Location: ../index.php");
+	exit();
 }
-
-
-	$email = $_POST['email'];
-	$password = $_POST['password'];
-	try{
-		$conn = new PDO('mysql:host='.$db_host.';dbname='.$db_name, $db_user, $db_password);
-		$data = $conn->query('SELECT * FROM users WHERE email = "'.$email.'" AND password = "'.$password.'"');
-
-		if ($data->rowCount() > 0) {
-			$result = $data->fetch(PDO::FETCH_ASSOC);
-
-			$_SESSION['logIn'] = true;
-			$_SESSION['name'] = $result['name'];
-		}else{
-			throw new PDOException;
-			$_SESSION['loginError'] = true;
-		}
-			header('Location: ../index.php');
-			$data->closeCursor();
-
-
-	}
-	catch(PDOException $e){
-		$_SESSION['loginError'] = true;
-		header('Location: ../index.php');
-		//echo 'Error number: '.$e->getCode().'. '.$e->getMessage();
-	}
-
-
-// if($_SESSION['logIn'] && $_SESSION['logIn'] == true) {
-//     header("Location: index.php");
-//     exit();
-// } else {
-//     if($_POST['login'] != "" && $_POST['password'] != ""){
-//         if($_POST['login'] == 'tomek' && $_POST['password'] == 'qwerty123'){
-//             $_SESSION['logIn'] = true;
-//             header("Location: strona.php");
-//         } else {
-//             $_SESSION['loginError'] = '<span class="error">Błędne dane logowania</span>';
-//             header("Location: index.php");
-//         }
-//     } else {
-//         $_SESSION['loginError'] = '<span class="error">Wypełnij pola</span>';
-//         header("Location: index.php");
-//     }
-// }
-
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patter.com - Logowanie</title>
+  <meta charset="utf-8">
+	<meta name="keywords" content="firma, klient, dom, remont">   
+	<meta name="description" content="Zbuduj sobie dom">
+	
+	<meta name="theme-color" content="#EF9221">
+	<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+	<link rel="manifest" href="../favicon/site.webmanifest">
+	<link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#EF9221">
+	<meta name="msapplication-TileColor" content="#EF9221">
+
+	<link href="https://fonts.googleapis.com/css?family=Cabin:400,600i&amp;subset=latin-ext" rel="stylesheet">
+
+	<link href="../css/login.css" rel="stylesheet" type="text/css">
+
+    <script src="../lib/jquery/jquery-3.3.1.min.js"></script>
+	<script src="../js/outlook.js"></script>
+
+</head>
+<body>
+	<style type="text/css">
+		main{
+			width: 100%;
+		}
+	</style>
+  
+	  <header>
+		<img class="logo" src="../img/logo.svg" alt="Pattern's logo">
+
+	  </header>
+	<main>
+	<div class="logIn">
+	    <form action="./loginScript.php" method="post">
+	        <p>Podaj swój e-mail:</p>
+	        <input type="text" name="email">
+	        <p>Wprowadź hasło:</p>
+	        <input type="password" name="password"><br>
+	        <input type="submit" name="">
+	    </form>
+	    <p class="loginError">
+	    	<?php
+	        if ( isset($_SESSION['loginError']) && $_SESSION['loginError'] != '' ) {
+	        	echo $_SESSION['loginError'];
+	        }
+	        ?>
+	    </p>
+	</main>
+
+
+<footer>
+	Wszystkie prawa zastrzeżone. &copy; Własność spółki Igtora
+</footer>
+
+</body>
+</html>

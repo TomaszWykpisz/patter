@@ -92,15 +92,23 @@ header{
 	margin-right: 20px;
 }
 
+.userPanel{
+	width: 150px;
+}
 .userPanel img{
 	width: 1em;
 	margin: 5px;
+}
+.logged_on{
+	width: inherit;
 }
 
 .logIn{
 	padding: 10px;
 	position: absolute; top: 65px;
-	background: #FFA639 
+	background: #FFA639;
+	opacity: 0;
+	width: inherit;
 }
 .logIn p{
 	margin: 5px 0;
